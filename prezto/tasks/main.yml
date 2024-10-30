@@ -1,6 +1,6 @@
 ---
 - git:
-    repo: git@github.com:bdhess/prezto.git
+    repo: https://github.com/bdhess/prezto.git
     dest: '{{ lookup("env", "HOME") }}/.zprezto'
 
 - find:
