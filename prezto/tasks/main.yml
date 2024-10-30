@@ -1,0 +1,15 @@
+---
+- git:
+    repo: git@github.com:bdhess/prezto.git
+    dest: '{{ lookup("env", "HOME") }}/.zprezto'
+
+- find:
+    paths: '{{ lookup("env", "HOME") }}/.zprezto/runcoms'
+    excludes: README.md
+  register: scripts
+
+- file:
+    state: link
+    src: '{{ item.path }}'
+    dest: '{{ lookup("env", "HOME") }}/.{{ item.path | basename }}'
+  with_items: '{{ scripts.files }}'

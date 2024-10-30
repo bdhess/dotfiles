@@ -1,0 +1,22 @@
+---
+- osx_defaults:
+    domain: '{{ item.domain }}'
+    key: '{{ item.key }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  with_items: '{{ macos_defaults }}'
+
+- copy:
+    src: '{{ item }}'
+    dest: '{{ lookup("env", "HOME") }}/Library/Preferences/{{ item }}'
+    mode: 0644
+  with_items:
+    - com.apple.dock.plist
+    - com.apple.Terminal.plist
+
+- plist:
+    file: '{{ lookup("env", "HOME") }}/Library/Preferences/com.apple.finder.plist'
+    entry: '{{ item.entry }}'
+    type: '{{ item.type }}'
+    value: '{{ item.value }}'
+  with_items: '{{ finder_plist }}'

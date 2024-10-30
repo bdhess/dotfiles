@@ -1,0 +1,10 @@
+" General Options
+set encoding=utf-8
+" activate syntax highlighting
+syntax on
+" filetype detection and handling
+" https://vi.stackexchange.com/questions/10124/what-is-the-difference-between-filetype-plugin-indent-on-and-filetype-indent
+filetype plugin indent on
+" sane backspace behavior
+" https://vi.stackexchange.com/questions/2162/why-doesnt-the-backspace-key-work-in-insert-mode
+set backspace=indent,eol,start

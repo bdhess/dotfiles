@@ -1,0 +1,225 @@
+---
+macos_defaults:
+  # Dark mode
+  - domain: NSGlobalDomain
+    key: AppleInterfaceStyleSwitchesAutomatically
+    type: bool
+    value: true
+
+  # Save to disk (not to iCloud) by default
+  - domain: NSGlobalDomain
+    key: NSDocumentSaveNewDocumentsToCloud
+    type: bool
+    value: false
+
+  # Automatically quit printer app once the print jobs complete
+  - domain: com.apple.print.PrintingPrefs
+    key: Quit When Finished
+    type: bool
+    value: true
+
+  # Disable automatic capitalization as it’s annoying when typing code
+  - domain: NSGlobalDomain
+    key: NSAutomaticCapitalizationEnabled
+    type: bool
+    value: false
+
+  # Disable smart dashes as they’re annoying when typing code
+  - domain: NSGlobalDomain
+    key: NSAutomaticDashSubstitutionEnabled
+    type: bool
+    value: false
+
+  # Disable automatic period substitution as it’s annoying when typing code
+  - domain: NSGlobalDomain
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: bool
+    value: false
+
+  # Disable smart quotes as they’re annoying when typing code
+  - domain: NSGlobalDomain
+    key: NSAutomaticQuoteSubstitutionEnabled
+    type: bool
+    value: false
+
+  # Disable auto-correct
+  - domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+  # Disable “natural” (reverse) scrolling
+  - domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: false
+
+  # Set a blazingly fast keyboard repeat rate
+  - domain: NSGlobalDomain
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+  - domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 2
+  - domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 15 
+
+  # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+  - domain: com.apple.finder
+    key: QuitMenuItem
+    type: bool
+    value: true
+
+  # Finder: show all filename extensions
+  - domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+
+  # Enable spring loading for directories
+  - domain: NSGlobalDomain
+    key: com.apple.springing.enabled
+    type: bool
+    value: true
+
+  # Remove the spring loading delay for directories
+  - domain: NSGlobalDomain
+    key: com.apple.springing.delay
+    type: float
+    value: 0
+
+  # Use list view in all Finder windows by default
+  - domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: Nlsv
+
+  # Enable highlight hover effect for the grid view of a stack (Dock)
+  - domain: com.apple.dock
+    key: mouse-over-hilite-stack
+    type: bool
+    value: true
+
+  # Make Dock icons of hidden applications translucent
+  - domain: com.apple.dock
+    key: showhidden
+    type: bool
+    value: true
+
+  # Enable the Develop menu and the Web Inspector in Safari
+  - domain: com.apple.Safari
+    key: IncludeDevelopMenu
+    type: bool
+    value: true
+  - domain: com.apple.Safari
+    key: WebKitDeveloperExtrasEnabledPreferenceKey
+    type: bool
+    value: true
+  - domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
+    type: bool
+    value: true
+
+  # Add a context menu item for showing the Web Inspector in web views
+  - domain: NSGlobalDomain
+    key: WebKitDeveloperExtras
+    type: bool
+    value: true
+
+  # Disable Safari auto-correct
+  - domain: com.apple.Safari
+    key: WebAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+  # Enable “Do Not Track”
+  - domain: com.apple.Safari
+    key: SendDoNotTrackHTTPHeader
+    type: bool
+    value: true
+
+  # Use plain text mode for new TextEdit documents
+  - domain: com.apple.TextEdit
+    key: RichText
+    type: int
+    value: 0
+
+  # Open and save files as UTF-8 in TextEdit
+  - domain: com.apple.TextEdit
+    key: PlainTextEncoding
+    type: int
+    value: 4
+  - domain: com.apple.TextEdit
+    key: PlainTextEncodingForWrite
+    type: int
+    value: 4
+
+  # Enable the automatic update check
+  - domain: com.apple.SoftwareUpdate
+    key: AutomaticCheckEnabled
+    type: bool
+    value: true
+
+  # Check for software updates daily, not just once per week
+  - domain: com.apple.SoftwareUpdate
+    key: ScheduleFrequency
+    type: int
+    value: 1
+
+  # Download newly available updates in background
+  - domain: com.apple.SoftwareUpdate
+    key: AutomaticDownload
+    type: int
+    value: 1
+
+  # Install System data files & security updates
+  - domain: com.apple.SoftwareUpdate
+    key: CriticalUpdateInstall
+    type: int
+    value: 1
+
+  # Turn on app auto-update
+  - domain: com.apple.commerce
+    key: AutoUpdate
+    type: bool
+    value: true
+
+finder_plist:
+  # Show item info to the right of the icons on the desktop
+  - entry: DesktopViewSettings:IconViewSettings:labelOnBottom
+    type: bool
+    value: false
+  # Enable snap-to-grid for icons on the desktop and in other icon views
+  - entry: :DesktopViewSettings:IconViewSettings:arrangeBy
+    type: string
+    value: grid
+  - entry: :FK_StandardViewSettings:IconViewSettings:arrangeBy
+    type: string
+    value: grid
+  - entry: :StandardViewSettings:IconViewSettings:arrangeBy
+    type: string
+    value: grid
+  # Increase grid spacing for icons on the desktop and in other icon views
+  - entry: :DesktopViewSettings:IconViewSettings:gridSpacing
+    type: real
+    value: 100
+  - entry: :FK_StandardViewSettings:IconViewSettings:gridSpacing
+    type: real
+    value: 100
+  - entry: :StandardViewSettings:IconViewSettings:gridSpacing
+    type: real
+    value: 100
+  # Increase the size of icons on the desktop and in other icon views
+  - entry: :DesktopViewSettings:IconViewSettings:iconSize
+    type: real
+    value: 80
+  - entry: :FK_StandardViewSettings:IconViewSettings:iconSize
+    type: real
+    value: 80
+  - entry: :StandardViewSettings:IconViewSettings:iconSize
+    type: real
+    value: 80

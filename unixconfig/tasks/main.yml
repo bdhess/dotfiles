@@ -1,0 +1,9 @@
+---
+- copy:
+    src: '{{ item }}'
+    dest: '{{ lookup("env", "HOME") }}/.{{ item }}'
+    mode: 0644
+  with_items:
+  - gitconfig
+  - tmux.conf
+  - vimrc
