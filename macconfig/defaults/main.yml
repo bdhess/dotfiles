@@ -110,35 +110,9 @@ macos_defaults:
     type: bool
     value: true
 
-  # Enable the Develop menu and the Web Inspector in Safari
-  - domain: com.apple.Safari
-    key: IncludeDevelopMenu
-    type: bool
-    value: true
-  - domain: com.apple.Safari
-    key: WebKitDeveloperExtrasEnabledPreferenceKey
-    type: bool
-    value: true
-  - domain: com.apple.Safari
-    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
-    type: bool
-    value: true
-
   # Add a context menu item for showing the Web Inspector in web views
   - domain: NSGlobalDomain
     key: WebKitDeveloperExtras
-    type: bool
-    value: true
-
-  # Disable Safari auto-correct
-  - domain: com.apple.Safari
-    key: WebAutomaticSpellingCorrectionEnabled
-    type: bool
-    value: false
-
-  # Enable “Do Not Track”
-  - domain: com.apple.Safari
-    key: SendDoNotTrackHTTPHeader
     type: bool
     value: true
 
